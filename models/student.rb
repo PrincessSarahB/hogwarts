@@ -79,4 +79,12 @@ def self.find( id )
   return result
 end
 
+def find_house()
+  sql = "SELECT * FROM houses WHERE id = $1;"
+  values = [@student_id]
+    house = SqlRunner.run(sql, values)
+    result = house.map {|house| House.new(house)}
+    return result
+end
+
 end

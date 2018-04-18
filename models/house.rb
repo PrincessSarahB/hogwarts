@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class House
 
-attr_reader :house_name, :url
+attr_reader :id, :house_name, :url
 
 def initialize(options)
 @id = options['id'].to_i
@@ -25,6 +25,21 @@ RETURNING *"
 values = [@house_name, @url]
 house_data = SqlRunner.run(sql, values)
 @id = house_data.first()['id'].to_i
+end
+
+def update()
+  sql = "UPDATE houses
+  SET
+  (
+    house_name,
+  url,
+  ) =
+  (
+    $1, $2
+  )
+  WHERE id = $3"
+  values = [@house_name, @url, @id]
+  SqlRunner.run( sql, values )
 end
 
 def self.all()

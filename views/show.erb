@@ -1,7 +1,7 @@
 <p>First name: <%= @student.first_name %></p>
 <p>Last name: <%= @student.last_name %></p>
-<p>Topping: <%= @student.house %></p>
-<p>Quantity: <%= @student.age %></p>
+<p>House: <%= @student.house %></p>
+<p>Age: <%= @student.age %></p>
 
 <form action="/student/<%=@student.id%>/delete" method="post">
 <input type="submit" value="Delete Student">
