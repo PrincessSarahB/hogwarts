@@ -9,7 +9,7 @@ def initialize(options)
 @first_name = options['first_name']
 @last_name = options['last_name']
 @house = options['house']
-@age = age['age'].to_i
+@age = options['age'].to_i
 
 end
 
@@ -72,7 +72,7 @@ def self.all()
 end
 
 def self.find( id )
-  sql = "SELECT * FROM student WHERE id = $1"
+  sql = "SELECT * FROM students WHERE id = $1"
   values = [id]
   student = SqlRunner.run( sql, values )
   result = Student.new( student.first )
