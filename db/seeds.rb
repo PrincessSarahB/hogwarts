@@ -1,4 +1,5 @@
 require_relative('../models/student.rb')
+require_relative('../models/house.rb')
 
 Student.delete_all()
 
@@ -8,7 +9,7 @@ student1 = Student.new(
     "house" => "Gryffindor",
     "age" => 15
   })
-student1.save()
+
 
 student2 = Student.new(
   {
@@ -20,7 +21,6 @@ student2 = Student.new(
   }
 )
 
-student2.save()
 
 student3 = Student.new(
   {
@@ -32,7 +32,7 @@ student3 = Student.new(
   }
 )
 
-student3.save()
+
 
 student4 = Student.new(
   {
@@ -44,4 +44,43 @@ student4 = Student.new(
   }
 )
 
-student4.save()
+
+
+house1 = House.new(
+  {
+    "house_name" => "Gryffindor",
+    "url" => "../public/gryffindor_logo.jpg"
+  })
+
+
+
+  house2 = House.new(
+    {
+      "house_name" => "Slytherin",
+      "url" => "../public/slytherin_logo.jpg"
+    })
+
+
+
+    house3 = House.new(
+      {
+        "house_name" => "Ravenclaw",
+        "url" => "../public/ravenclaw_logo.jpg"
+      })
+
+
+
+      house4 = House.new(
+        {
+          "house_name" => "Hufflepuff",
+          "url" => "../public/hufflepuff_logo.jpg"
+        })
+        student1.save()
+        student2.save()
+        student3.save()
+        student4.save()
+
+        house1.save()
+        house2.save()
+        house3.save()
+        house4.save()
